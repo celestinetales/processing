@@ -1,0 +1,23 @@
+void setup() {
+ size(800, 800);
+ colorMode(HSB, 360, 100, 100);
+ println( sin(3*PI/2.0));
+ noFill();
+}
+void draw() {
+ background(0, 0, 0); 
+ float sinvalue = sin((float)frameCount/150); //using the sin function
+ println(frameCount + " " + sinvalue); //it prints the lines 
+ int linespacing = 10; //the line spacing 
+ for( int i=0; i < width/linespacing ; i++) 
+{
+ stroke(i* 5 * abs(sinvalue), 100, 100); 
+ float linewidth = map( i, 0, width/linespacing, 0, linespacing);
+ strokeWeight(linewidth* abs(sinvalue));
+ float x1 = linespacing * (i);
+ int y1 = 0;
+ float x2 = x1;
+ int y2 = height;
+ line(x1,y1,x2,y2); //line 
+ }
+}
