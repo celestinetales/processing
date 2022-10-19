@@ -1,0 +1,332 @@
+void setup(){
+size(1280,880);
+background(255,255,255);
+
+//spec — Participant
+fill(0,0,0);
+text(“Participant 1”, 30, 60);
+noStroke();
+fill (252, 58, 155);
+ellipse (20,55,10,10);
+
+fill(0,0,0);
+text(“Participant 2”, 30, 80);
+noStroke();
+fill (119, 58, 252,160);
+ellipse (20,75,10,10);
+
+fill(0,0,0);
+text(“Participant 3”, 30, 100);
+noStroke();
+fill (13, 217, 149,180);
+ellipse (20,95,10,10);
+
+fill(0,0,0);
+text(“Participant 4”, 30, 120);
+noStroke();
+fill (237, 115, 21,160);
+ellipse (20,115,10,10);
+
+fill(0,0,0);
+text(“Participant 5”, 30, 140);
+noStroke();
+fill (28, 241, 252,160);
+ellipse (20,135,10,10);
+
+fill(0,0,0);
+text(“Participant 6”, 30, 160);
+noStroke();
+fill (237, 149, 252,160);
+ellipse (20,155,10,10);
+
+//first column
+noStroke();
+fill(173, 247, 174,180);
+rect(100,0,200,260);
+fill(247, 243, 173);
+rect(100,260,200,260);
+fill(247, 173, 173,180);
+rect(100,520,200,270);
+
+//Quadrant Info
+fill(0,0,0);
+textSize(10);
+text(“How often participant eat balanced meal?”, 105, 40);
+
+//secondcolumn
+fill(173, 247, 174);
+rect(300,0,200,100);
+fill(173, 247, 174, 200);
+rect(300,100,200,100);
+fill(173, 247, 174, 160);
+rect(300,200,200,100);
+fill(247, 243, 173);
+rect(300,300,200,100);
+fill(247, 243, 173, 200);
+rect(300,400,200,100);
+fill(247, 243, 173, 160);
+rect(300,500,200,100);
+fill(247, 173, 173,180);
+rect(300,600,200,100);
+fill(247, 173, 173);
+rect(300,700,200,100);
+
+//Quadrant Info
+fill(0,0,0);
+textSize(10);
+text(“Amount of info they seek for food”, 300, 40);
+
+//third column
+fill(173, 247, 174);
+rect(500,0,200,88);
+fill(173, 247, 174,200);
+rect(500,88,200,88);
+fill(173, 247, 174,160);
+rect(500,176,200,88);
+fill(173, 247, 174,100);
+rect(500,264,200,88);
+fill(247, 243, 173);
+rect(500,352,200,88);
+fill(247, 243, 173, 200);
+rect(500,440,200,88);
+fill(254, 255, 168,180);
+rect(500,528,200,88);
+fill(247, 173, 173,180);
+rect(500,616,200,88);
+fill(247, 173, 173);
+rect(500,704,200,88);
+fill(247, 173, 173);
+rect(500,792,200,88);
+
+//Quadrant Info
+fill(0,0,0);
+textSize(10);
+text(“Do they trust the information?”, 500, 40);
+
+//4th column
+fill(173, 247, 174,180);
+rect(700,0,200,260);
+fill(247, 243, 173);
+rect(700,260,200,260);
+fill(247, 173,173,180);
+rect(700,520,200,270);
+
+//Quadrant Info
+fill(0,0,0);
+textSize(10);
+text(“Does participant find the information Useful?”, 700, 40);
+
+//5th column
+fill(173, 247, 174);
+rect(900,0,200,80);
+fill(173, 247, 174,200);
+rect(900,80,200,80);
+fill(173, 247, 174,160);
+rect(900,160,200,80);
+fill(173, 247, 174,100);
+rect(900,240,200,80);
+fill(254, 255, 168);
+rect(900,320,200,80);
+fill(254, 255, 168,200);
+rect(900,400,200,80);
+fill(254, 255, 168,160);
+rect(900,480,200,80);
+fill(254, 255, 168,100);
+rect(900,560,200,80);
+fill(247, 173, 173, 200);
+rect(900,640,200,80);
+fill(247, 173, 173);
+rect(900,720,200,80);
+
+//Quadrant Info
+fill(0,0,0);
+textSize(10);
+text(“How much user uses the information”, 900, 40);
+
+//6th column
+fill(173, 247, 174,180);
+rect(1100,0,200,260);
+fill(247, 243, 173);
+rect(1100,260,200,260);
+fill(247, 173,173,180);
+rect(1100,520,200,270);
+
+//Quadrant Info
+fill(0,0,0);
+textSize(9);
+text(“Did the info help them to get balanced meal?”, 1100, 40);
+
+//heading
+
+fill(0,0,0);
+textSize(24);
+text(“Rise and Fall of information when going through food insecurity — By Akin, Avitha and Shruti”,200,760);
+data = loadTable(“Food_Survey.csv”,”header”);
+println(data.getRowCount());
+{TableRow row = data.getRow(1);
+Float balanced_meal = row.getFloat (“balanced_meal”);
+Float Information_awareness = row.getFloat (“Information_awareness”);
+Float information_source = row.getFloat (“information_source”);
+Float information_useful = row.getFloat (“information_useful”);
+Float information_use = row.getFloat (“information_use”);
+Float information_outcome = row.getFloat (“information_outcome”);
+
+//P1
+fill (252, 58, 155);
+noStroke();
+ellipse (200,balanced_meal,40,40);
+ellipse (400,Information_awareness,40,40);
+ellipse (600,information_source,40,40);
+ellipse (800,information_useful,40,40);
+ellipse (1000,information_use,40,40);
+ellipse (1200,information_outcome,40,40);
+stroke(252, 58, 155,200);
+line(0,750,200,balanced_meal);
+line(200,balanced_meal,400,Information_awareness);
+line(400,Information_awareness,600,information_source);
+line(600,information_source,800,information_useful);
+line(800,information_useful,1000,information_use);
+line(1000,information_use,1200,information_outcome);
+
+}
+
+{
+//P2
+TableRow row = data.getRow(2);
+Float balanced_meal = row.getFloat (“balanced_meal”);
+Float Information_awareness = row.getFloat (“Information_awareness”);
+Float information_source = row.getFloat (“information_source”);
+Float information_useful = row.getFloat (“information_useful”);
+Float information_use = row.getFloat (“information_use”);
+Float information_outcome = row.getFloat (“information_outcome”);
+
+fill (119, 58, 252,160);
+noStroke();
+ellipse (200,balanced_meal,35,35);
+ellipse (400,Information_awareness,35,35);
+ellipse (600,information_source,35,35);
+ellipse (800,information_useful,35,35);
+ellipse (1000,information_use,35,35);
+ellipse (1200,information_outcome,35,35);
+stroke(119, 58, 252,160);
+strokeWeight(2);
+line(5,760,200,balanced_meal);
+line(200,balanced_meal,400,Information_awareness);
+line(400,Information_awareness,600,information_source);
+line(600,information_source,800,information_useful);
+line(800,information_useful,1000,information_use);
+line(1000,information_use,1200,information_outcome);
+}
+
+{
+//P3
+TableRow row = data.getRow(3);
+Float balanced_meal = row.getFloat (“balanced_meal”);
+Float Information_awareness = row.getFloat (“Information_awareness”);
+Float information_source = row.getFloat (“information_source”);
+Float information_useful = row.getFloat (“information_useful”);
+Float information_use = row.getFloat (“information_use”);
+Float information_outcome = row.getFloat (“information_outcome”);
+
+fill (13, 217, 149,180);
+noStroke();
+ellipse (200,balanced_meal,30,30);
+ellipse (400,Information_awareness,30,30);
+ellipse (600,information_source,30,30);
+ellipse (800,information_useful,30,30);
+ellipse (1000,information_use,30,30);
+ellipse (1200,information_outcome,30,30);
+stroke(13, 217, 149,180);
+strokeWeight(2);
+line(10,770,200,balanced_meal);
+line(200,balanced_meal,400,Information_awareness);
+line(400,Information_awareness,600,information_source);
+line(600,information_source,800,information_useful);
+line(800,information_useful,1000,information_use);
+line(1000,information_use,1200,information_outcome);
+}
+
+{
+//P4
+TableRow row = data.getRow(4);
+Float balanced_meal = row.getFloat (“balanced_meal”);
+Float Information_awareness = row.getFloat (“Information_awareness”);
+Float information_source = row.getFloat (“information_source”);
+Float information_useful = row.getFloat (“information_useful”);
+Float information_use = row.getFloat (“information_use”);
+Float information_outcome = row.getFloat (“information_outcome”);
+
+fill (237, 115, 21,160);
+noStroke();
+ellipse (200,balanced_meal,25,25);
+ellipse (400,Information_awareness,25,25);
+ellipse (600,information_source,25,25);
+ellipse (800,information_useful,25,25);
+ellipse (1000,information_use,25,25);
+ellipse (1200,information_outcome,25,25);
+stroke(237, 115, 21,160);
+strokeWeight(2);
+line(15,780,200,balanced_meal);
+line(200,balanced_meal,400,Information_awareness);
+line(400,Information_awareness,600,information_source);
+line(600,information_source,800,information_useful);
+line(800,information_useful,1000,information_use);
+line(1000,information_use,1200,information_outcome);
+}
+{
+//P5
+TableRow row = data.getRow(5);
+Float balanced_meal = row.getFloat (“balanced_meal”);
+Float Information_awareness = row.getFloat (“Information_awareness”);
+Float information_source = row.getFloat (“information_source”);
+Float information_useful = row.getFloat (“information_useful”);
+Float information_use = row.getFloat (“information_use”);
+Float information_outcome = row.getFloat (“information_outcome”);
+
+fill (28, 241, 252,160);
+noStroke();
+ellipse (200,balanced_meal,20,20);
+ellipse (400,Information_awareness,20,20);
+ellipse (600,information_source,20,20);
+ellipse (800,information_useful,20,20);
+ellipse (1000,information_use,20,20);
+ellipse (1200,information_outcome,20,20);
+stroke(28, 241, 252,160);
+strokeWeight(2);
+line(20,790,200,balanced_meal);
+line(200,balanced_meal,400,Information_awareness);
+line(400,Information_awareness,600,information_source);
+line(600,information_source,800,information_useful);
+line(800,information_useful,1000,information_use);
+line(1000,information_use,1200,information_outcome);
+}
+
+{
+//P6
+TableRow row = data.getRow(6);
+Float balanced_meal = row.getFloat (“balanced_meal”);
+Float Information_awareness = row.getFloat (“Information_awareness”);
+Float information_source = row.getFloat (“information_source”);
+Float information_useful = row.getFloat (“information_useful”);
+Float information_use = row.getFloat (“information_use”);
+Float information_outcome = row.getFloat (“information_outcome”);
+
+fill (237, 149, 252,160);
+noStroke();
+ellipse (200,balanced_meal,15,15);
+ellipse (400,Information_awareness,15,15);
+ellipse (600,information_source,15,15);
+ellipse (800,information_useful,15,15);
+ellipse (1000,information_use,15,15);
+ellipse (1200,information_outcome,15,15);
+stroke(237, 149, 252,200);
+strokeWeight(2);
+line(25,800,200,balanced_meal);
+line(200,balanced_meal,400,Information_awareness);
+line(400,Information_awareness,600,information_source);
+line(600,information_source,800,information_useful);
+line(800,information_useful,1000,information_use);
+line(1000,information_use,1200,information_outcome);
+}
+}
+
